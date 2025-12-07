@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelviaDigital - Votre partenaire digital, de A à Z</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1E40AF;
+            --secondary: #8B5CF6;
+            --neutral-bg: #F9FAFB;
+            --text-main: #4B5563;
+            --text-light: #9CA3AF;
+            --white: #FFFFFF;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-main);
+            background-color: var(--neutral-bg);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .cta-button {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .cta-button:hover {
+            background: #153A8D;
+        }
+        
+        .lang-selector {
+            background: var(--neutral-bg);
+            border: 1px solid var(--primary);
+            border-radius: var(--border-radius);
+            padding: 0.3rem 0.6rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-bullets {
+            list-style: none;
+            max-width: 500px;
+            margin: 2rem auto;
+        }
+        
+        .hero-bullets li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background: #F0F0F0;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        /* Sections */
+        section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            color: var(--text-light);
+        }
+        
+        /* Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .card p {
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+        
+        .card-target {
+            font-style: italic;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        /* Pricing */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .pricing-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .pricing-card.popular {
+            border-color: var(--secondary);
+            position: relative;
+        }
+        
+        .pricing-card.popular::before {
+            content: 'Populaire';
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: var(--secondary);
+            color: var(--white);
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .pricing-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        .pricing-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .pricing-note {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            text-align: center;
+        }
+        
+        /* Process */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .step {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-weight: 700;
+        }
+        
+        .step h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        /* Team */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .team-member {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .team-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .team-role {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        /* Contact */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-submit {
+            background: var(--primary);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .form-submit:hover {
+            background: #153A8D;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-slogan {
+            margin-bottom: 1.5rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+        }
+        
+        .footer-contact {
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-contact a {
+            color: var(--white);
+            text-decoration: none;
+        }
+        
+        .footer-copyright {
+            text-align: center;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        /* Language Toggle */
+        .lang-fr { display: block; }
+        .lang-en { display: none; }
+        
+        .lang-switch { cursor: pointer; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-title h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">HelviaDigital</a>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#solutions">Solutions</a></li>
+                        <li><a href="#pricing">Packs & Tarifs</a></li>
+                        <li><a href="#process">Process</a></li>
+                        <li><a href="#team">Équipe</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-buttons">
+                    <a href="#contact" class="cta-button lang-fr">Demander un devis</a>
+                    <a href="#contact" class="cta-button lang-en">Get a quote</a>
+                    <select class="lang-selector" id="language">
+                        <option value="fr">FR</option>
+                        <option value="en">EN</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1 class="lang-fr">HelviaDigital – Votre partenaire digital, de A à Z.</h1>
+            <h1 class="lang-en">HelviaDigital – Your digital partner, from A to Z.</h1>
+            <p class="lang-fr">Hébergement web, emails professionnels, licences Microsoft et assistance IT pour PME, startups et commerçants.</p>
+            <p class="lang-en">Web hosting, professional emails, Microsoft licenses and IT support for SMEs, startups and merchants.</p>
+            
+            <ul class="hero-bullets">
+                <li><i class="ri-check-line"></i> <span class="lang-fr">Réponse sous 24h ouvrées</span> <span class="lang-en">Response within 24 business hours</span></li>
+                <li><i class="ri-check-line"></i> <span class="lang-fr">Forfaits clairs, sans surprise</span> <span class="lang-en">Clear packages, no surprises</span></li>
+                <li><i class="ri-check-line"></i> <span class="lang-fr">Support à distance et sur site</span> <span class="lang-en">Remote and on-site support</span></li>
+            </ul>
+            
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary lang-fr">Demander un devis gratuit</a>
+                <a href="#contact" class="btn btn-primary lang-en">Get a free quote</a>
+                <a href="#contact" class="btn btn-secondary lang-fr">Parler à un expert</a>
+                <a href="#contact" class="btn btn-secondary lang-en">Talk to an expert</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="lang-fr">Nos solutions pour les PME, startups et commerçants</h2>
+                <h2 class="lang-en">Our solutions for SMEs, startups and merchants</h2>
+                <p class="lang-fr">Les 3 services prioritaires pour sécuriser et professionnaliser votre infrastructure digitale.</p>
+                <p class="lang-en">The 3 priority services to secure and professionalize your digital infrastructure.</p>
+            </div>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <i class="ri-computer-line card-icon"></i>
+                    <h3 class="lang-fr">Assistance & Dépannage IT / Réseau</h3>
+                    <h3 class="lang-en">IT & Network Support & Repair</h3>
+                    <p class="lang-fr">Support à distance ou sur site pour vos ordinateurs, imprimantes, Wi-Fi et petits serveurs. Nous résolvons les pannes, infections, lenteurs et problèmes réseau.</p>
+                    <p class="lang-en">Remote or on-site support for your computers, printers, Wi-Fi and small servers. We solve breakdowns, infections, slowness and network issues.</p>
+                    <p class="card-target lang-fr">TPE/PME, cabinets, écoles, particuliers professionnels.</p>
+                    <p class="card-target lang-en">Small businesses, offices, schools, professional individuals.</p>
+                </div>
+                
+                <div class="card">
+                    <i class="ri-microsoft-line card-icon"></i>
+                    <h3 class="lang-fr">Licences Microsoft & logiciels</h3>
+                    <h3 class="lang-en">Microsoft licenses & software</h3>
+                    <p class="lang-fr">Fourniture et installation de licences Microsoft (Windows, Office / Microsoft 365, etc.) via un revendeur agréé. Mise en conformité, activation correcte et mises à jour.</p>
+                    <p class="lang-en">Supply and installation of Microsoft licenses (Windows, Office / Microsoft 365, etc.) through an authorized reseller. Compliance, proper activation and updates.</p>
+                    <p class="card-target lang-fr">Écoles, PME, indépendants, professions libérales.</p>
+                    <p class="card-target lang-en">Schools, SMEs, freelancers, liberal professions.</p>
+                </div>
+                
+                <div class="card">
+                    <i class="ri-global-line card-icon"></i>
+                    <h3 class="lang-fr">Hébergement web & emails professionnels</h3>
+                    <h3 class="lang-en">Web hosting & professional emails</h3>
+                    <p class="lang-fr">Hébergement de votre site web et création d’adresses email professionnelles (ex : contact@votre-entreprise.ci). Configuration sur ordinateurs et smartphones, sauvegardes de base.</p>
+                    <p class="lang-en">Hosting of your website and creation of professional email addresses (e.g. contact@your-company.ci). Configuration on computers and smartphones, basic backups.</p>
+                    <p class="card-target lang-fr">PME, startups, commerçants, cabinets.</p>
+                    <p class="card-target lang-en">SMEs, startups, merchants, offices.</p>
+                </div>
+            </div>
+            
+            <div class="section-title">
+                <h3 class="lang-fr">Autres services</h3>
+                <h3 class="lang-en">Other services</h3>
+            </div>
+            <div class="card-grid">
+                <div class="card">
+                    <h4 class="lang-fr">Webmastering</h4>
+                    <h4 class="lang-en">Webmastering</h4>
+                    <p class="lang-fr">Mises à jour WordPress, sécurité, petites modifications</p>
+                    <p class="lang-en">WordPress updates, security, small modifications</p>
+                </div>
+                <div class="card">
+                    <h4 class="lang-fr">Suivi GPS</h4>
+                    <h4 class="lang-en">GPS tracking</h4>
+                    <p class="lang-fr">Traccar pour flotte de véhicules</p>
+                    <p class="lang-en">Traccar for vehicle fleet</p>
+                </div>
+                <div class="card">
+                    <h4 class="lang-fr">Commercial virtuel</h4>
+                    <h4 class="lang-en">Virtual sales rep</h4>
+                    <p class="lang-fr">Gestion de leads (CRM)</p>
+                    <p class="lang-en">Lead management (CRM)</p>
+                </div>
+                <div class="card">
+                    <h4 class="lang-fr">Community management</h4>
+                    <h4 class="lang-en">Community management</h4>
+                    <p class="lang-fr">Support client</p>
+                    <p class="lang-en">Customer support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" style="background: var(--neutral-bg);">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="lang-fr">Packs & tarifs mensuels</h2>
+                <h2 class="lang-en">Monthly plans & pricing</h2>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 class="lang-fr">Pack Start Pro</h3>
+                    <h3 class="lang-en">Start Pro Pack</h3>
+                    <div class="pricing-price">20 000 XOF/mois</div>
+                    <p class="card-target lang-fr">Indépendants, petits commerçants, micro-entreprises.</p>
+                    <p class="card-target lang-en">Freelancers, small merchants, micro-businesses.</p>
+                    <ul class="pricing-features">
+                        <li class="lang-fr">Hébergement pour 1 site vitrine WordPress</li>
+                        <li class="lang-en">Hosting for 1 WordPress showcase site</li>
+                        <li class="lang-fr">3 adresses email professionnelles</li>
+                        <li class="lang-en">3 professional email addresses</li>
+                        <li class="lang-fr">1 h de support IT à distance / mois</li>
+                        <li class="lang-en">1 hour of remote IT support / month</li>
+                        <li class="lang-fr">Sauvegardes et monitoring simple</li>
+                        <li class="lang-en">Simple backups and monitoring</li>
+                    </ul>
+                    <p class="lang-fr">Idéal pour démarrer avec une image professionnelle.</p>
+                    <p class="lang-en">Perfect to start with a professional image.</p>
+                </div>
+                
+                <div class="pricing-card popular">
+                    <h3 class="lang-fr">Pack PME Connectée</h3>
+                    <h3 class="lang-en">Connected SME Pack</h3>
+                    <div class="pricing-price">35 000 XOF/mois</div>
+                    <p class="card-target lang-fr">PME de 3 à 15 personnes.</p>
+                    <p class="card-target lang-en">SMEs with 3 to 15 people.</p>
+                    <ul class="pricing-features">
+                        <li class="lang-fr">1 site web hébergé</li>
+                        <li class="lang-en">1 hosted website</li>
+                        <li class="lang-fr">Jusqu’à 5 adresses email pro</li>
+                        <li class="lang-en">Up to 5 professional emails</li>
+                        <li class="lang-fr">3 h de support IT à distance / mois</li>
+                        <li class="lang-en">3 hours of remote IT support / month</li>
+                        <li class="lang-fr">Priorité sur la file de support</li>
+                        <li class="lang-en">Priority in support queue</li>
+                        <li class="lang-fr">Remise sur interventions sur site</li>
+                        <li class="lang-en">Discount on on-site interventions</li>
+                    </ul>
+                    <p class="lang-fr">L’essentiel pour une petite PME : hébergement, emails, support IT.</p>
+                    <p class="lang-en">The essentials for a small SME: hosting, emails, IT support.</p>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3 class="lang-fr">Pack Bureau Microsoft</h3>
+                    <h3 class="lang-en">Microsoft Office Pack</h3>
+                    <div class="pricing-price">55 000 XOF/mois</div>
+                    <p class="card-target lang-fr">PME utilisant intensément la suite Office.</p>
+                    <p class="card-target lang-en">SMEs heavily using Office suite.</p>
+                    <ul class="pricing-features">
+                        <li class="lang-fr">Contenu du Pack PME Connectée</li>
+                        <li class="lang-en">Content of Connected SME Pack</li>
+                        <li class="lang-fr">3 licences Microsoft 365 Business (ou équivalent)</li>
+                        <li class="lang-en">3 Microsoft 365 Business licenses (or equivalent)</li>
+                        <li class="lang-fr">Installation & configuration des comptes sur PC & mobile</li>
+                        <li class="lang-en">Installation & configuration of accounts on PC & mobile</li>
+                        <li class="lang-fr">1 h de support IT à distance supplémentaire (4 h au total)</li>
+                        <li class="lang-en">1 additional hour of remote IT support (4 hours total)</li>
+                    </ul>
+                    <p class="lang-fr">Pour une équipe productive avec des licences Microsoft officielles.</p>
+                    <p class="lang-en">For a productive team with official Microsoft licenses.</p>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3 class="lang-fr">Pack Sur-Mesure Entreprise</h3>
+                    <h3 class="lang-en">Custom Enterprise Pack</h3>
+                    <div class="pricing-price">À partir de 75 000 XOF/mois</div>
+                    <ul class="pricing-features">
+                        <li class="lang-fr">Nombre de postes / utilisateurs</li>
+                        <li class="lang-en">Number of workstations / users</li>
+                        <li class="lang-fr">Nombre d’adresses email</li>
+                        <li class="lang-en">Number of email addresses</li>
+                        <li class="lang-fr">Licences Microsoft</li>
+                        <li class="lang-en">Microsoft licenses</li>
+                        <li class="lang-fr">Heures de support (distance & sur site)</li>
+                        <li class="lang-en">Support hours (remote & on-site)</li>
+                        <li class="lang-fr">Suivi GPS, webmastering, commercial virtuel, community management…</li>
+                        <li class="lang-en">GPS tracking, webmastering, virtual sales rep, community management…</li>
+                    </ul>
+                    <p class="lang-fr">Demandez un audit gratuit pour construire votre offre personnalisée.</p>
+                    <p class="lang-en">Request a free audit to build your custom offer.</p>
+                </div>
+            </div>
+            
+            <div class="section-title">
+                <h3 class="lang-fr">Dépannage ponctuel (sans engagement)</h3>
+                <h3 class="lang-en">One-time repair (no commitment)</h3>
+            </div>
+            <div class="card-grid">
+                <div class="card">
+                    <p class="lang-fr">• Dépannage à distance : 15 000 XOF / heure entamée</p>
+                    <p class="lang-en">• Remote repair: 15,000 XOF / started hour</p>
+                    <p class="lang-fr">• Dépannage sur site (zone locale) : 25 000 XOF jusqu’à 2 h, puis 10 000 XOF / h supplémentaire</p>
+                    <p class="lang-en">• On-site repair (local area): 25,000 XOF up to 2 hours, then 10,000 XOF / additional hour</p>
+                    <p class="lang-fr">Idéal pour une urgence unique. Possibilité de basculer ensuite sur un pack mensuel.</p>
+                    <p class="lang-en">Perfect for a one-time emergency. Possibility to switch to a monthly pack later.</p>
+                </div>
+            </div>
+            
+            <div class="section-title">
+                <h3 class="lang-fr">Options de personnalisation</h3>
+                <h3 class="lang-en">Customization options</h3>
+            </div>
+            <div class="card-grid">
+                <div class="card">
+                    <p class="lang-fr">• Adresse email pro supplémentaire : +1 000 XOF / mois</p>
+                    <p class="lang-en">• Additional professional email: +1,000 XOF / month</p>
+                    <p class="lang-fr">• Heure de support IT supplémentaire : +10 000 XOF / h</p>
+                    <p class="lang-en">• Additional IT support hour: +10,000 XOF / hour</p>
+                    <p class="lang-fr">• Licence Microsoft 365 supplémentaire : +9 000 XOF / utilisateur / mois</p>
+                    <p class="lang-en">• Additional Microsoft 365 license: +9,000 XOF / user / month</p>
+                    <p class="lang-fr">• Suivi GPS : à partir de 3 500 XOF / véhicule / mois</p>
+                    <p class="lang-en">• GPS tracking: from 3,500 XOF / vehicle / month</p>
+                    <p class="lang-fr">• Webmastering WordPress : +15 000 XOF / mois</p>
+                    <p class="lang-en">• WordPress webmastering: +15,000 XOF / month</p>
+                    <p class="lang-fr">• Commercial virtuel / prospection : sur devis</p>
+                    <p class="lang-en">• Virtual sales rep / prospecting: on request</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="lang-fr">Notre façon de travailler</h2>
+                <h2 class="lang-en">How we work</h2>
+                <p class="lang-fr">Un système pensé pour fonctionner même quand vous n’êtes pas au bureau.</p>
+                <p class="lang-en">A system designed to work even when you're not in the office.</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3 class="lang-fr">Diagnostic rapide (gratuit)</h3>
+                    <h3 class="lang-en">Quick diagnostic (free)</h3>
+                    <p class="lang-fr">Vous nous expliquez votre situation (WhatsApp, téléphone, visio). Nous analysons votre site, vos emails, vos postes et licences.</p>
+                    <p class="lang-en">You explain your situation (WhatsApp, phone, video call). We analyze your website, emails, workstations and licenses.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3 class="lang-fr">Proposition claire</h3>
+                    <h3 class="lang-en">Clear proposal</h3>
+                    <p class="lang-fr">Nous vous envoyons une offre simple : pack mensuel ou intervention ponctuelle, avec prix et délais précis.</p>
+                    <p class="lang-en">We send you a simple offer: monthly pack or one-time intervention, with precise prices and deadlines.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3 class="lang-fr">Mise en place</h3>
+                    <h3 class="lang-en">Implementation</h3>
+                    <p class="lang-fr">Mise en place de l’hébergement, des emails, des licences, des accès à distance et des sauvegardes.</p>
+                    <p class="lang-en">Implementation of hosting, emails, licenses, remote access and backups.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3 class="lang-fr">Système de contrôle à distance</h3>
+                    <h3 class="lang-en">Remote control system</h3>
+                    <p class="lang-fr">Services standardisés avec prix et livrables clairs. Votre assistant(e) local(e) peut valider seul(e) les interventions jusqu’à 25 000 XOF. Rapports quotidiens (WhatsApp ou formulaire) avec clients servis, problèmes, paiements reçus. Accès sécurisé aux outils (CRM, calendrier, Google Drive) mais jamais aux comptes bancaires ni au serveur principal sans double authentification.</p>
+                    <p class="lang-en">Standardized services with clear prices and deliverables. Your local assistant can validate interventions up to 25,000 XOF alone. Daily reports (WhatsApp or form) with served customers, problems, received payments. Secure access to tools (CRM, calendar, Google Drive) but never to bank accounts or main server without two-factor authentication.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3 class="lang-fr">Suivi & qualité</h3>
+                    <h3 class="lang-en">Follow-up & quality</h3>
+                    <p class="lang-fr">Nous rappelons régulièrement certains clients pour vérifier la qualité du service et améliorer nos procédures.</p>
+                    <p class="lang-en">We regularly call back some customers to check service quality and improve our procedures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" style="background: var(--neutral-bg);">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="lang-fr">Votre équipe digitale dédiée</h2>
+                <h2 class="lang-en">Your dedicated digital team</h2>
+                <p class="lang-fr">Une seule agence, plusieurs spécialistes à votre service.</p>
+                <p class="lang-en">One agency, multiple specialists at your service.</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <i class="ri-computer-line team-icon"></i>
+                    <div class="team-role lang-fr">Technicien Dépannage & Assistance IT</div>
+                    <div class="team-role lang-en">Repair & IT Support Technician</div>
+                    <p class="team-desc lang-fr">Résolution de pannes, installation, sécurité.</p>
+                    <p class="team-desc lang-en">Breakdown resolution, installation, security.</p>
+                </div>
+                
+                <div class="team-member">
+                    <i class="ri-map-pin-line team-icon"></i>
+                    <div class="team-role lang-fr">Technicien GPS</div>
+                    <div class="team-role lang-en">GPS Technician</div>
+                    <p class="team-desc lang-fr">Configuration et suivi Traccar pour vos véhicules.</p>
+                    <p class="team-desc lang-en">Configuration and Traccar tracking for your vehicles.</p>
+                </div>
+                
+                <div class="team-member">
+                    <i class="ri-code-s-slash-line team-icon"></i>
+                    <div class="team-role lang-fr">Webmaster</div>
+                    <div class="team-role lang-en">Webmaster</div>
+                    <p class="team-desc lang-fr">Gestion et mises à jour de votre site web.</p>
+                    <p class="team-desc lang-en">Management and updates of your website.</p>
+                </div>
+                
+                <div class="team-member">
+                    <i class="ri-user-voice-line team-icon"></i>
+                    <div class="team-role lang-fr">Assistant(e) Commercial(e) Virtuel(le)</div>
+                    <div class="team-role lang-en">Virtual Sales Assistant</div>
+                    <p class="team-desc lang-fr">Téléprospection, gestion de leads, CRM.</p>
+                    <p class="team-desc lang-en">Telemarketing, lead management, CRM.</p>
+                </div>
+                
+                <div class="team-member">
+                    <i class="ri-chat-3-line team-icon"></i>
+                    <div class="team-role lang-fr">Community Manager</div>
+                    <div class="team-role lang-en">Community Manager</div>
+                    <p class="team-desc lang-fr">Animation de vos réseaux sociaux.</p>
+                    <p class="team-desc lang-en">Management of your social networks.</p>
+                </div>
+                
+                <div class="team-member">
+                    <i class="ri-service-line team-icon"></i>
+                    <div class="team-role lang-fr">Support Client</div>
+                    <div class="team-role lang-en">Customer Support</div>
+                    <p class="team-desc lang-fr">Réponse rapide à vos demandes.</p>
+                    <p class="team-desc lang-en">Quick response to your requests.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="lang-fr">Parlons de votre projet digital</h2>
+                <h2 class="lang-en">Let's talk about your digital project</h2>
+                <p class="lang-fr">Décrivez votre besoin en 2 minutes, nous revenons vers vous sous 24h ouvrées.</p>
+                <p class="lang-en">Describe your need in 2 minutes, we get back to you within 24 business hours.</p>
+            </div>
+            
+            <form class="contact-form" action="mailto:contact@helviadigital.com" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <label for="name" class="lang-fr">Nom / Prénom</label>
+                    <label for="name" class="lang-en">Name / First name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="company" class="lang-fr">Entreprise</label>
+                    <label for="company" class="lang-en">Company</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" class="lang-fr">Email</label>
+                    <label for="email" class="lang-en">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone" class="lang-fr">Téléphone / WhatsApp</label>
+                    <label for="phone" class="lang-en">Phone / WhatsApp</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="service" class="lang-fr">Service(s) recherché(s)</label>
+                    <label for="service" class="lang-en">Service(s) needed</label>
+                    <select id="service" name="service" required>
+                        <option value="" class="lang-fr" selected>Sélectionnez un service</option>
+                        <option value="" class="lang-en" selected>Select a service</option>
+                        <option value="hosting" class="lang-fr">Hébergement & emails</option>
+                        <option value="hosting" class="lang-en">Hosting & emails</option>
+                        <option value="it" class="lang-fr">Assistance IT</option>
+                        <option value="it" class="lang-en">IT support</option>
+                        <option value="licenses" class="lang-fr">Licences Microsoft</option>
+                        <option value="licenses" class="lang-en">Microsoft licenses</option>
+                        <option value="gps" class="lang-fr">GPS</option>
+                        <option value="gps" class="lang-en">GPS</option>
+                        <option value="other" class="lang-fr">Autres</option>
+                        <option value="other" class="lang-en">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message" class="lang-fr">Message</label>
+                    <label for="message" class="lang-en">Message</label>
+                    <textarea id="message" name="message" placeholder="Décrivez votre projet..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contact-lang" class="lang-fr">Langue de contact préférée</label>
+                    <label for="contact-lang" class="lang-en">Preferred contact language</label>
+                    <select id="contact-lang" name="contact-lang">
+                        <option value="fr" class="lang-fr">Français</option>
+                        <option value="fr" class="lang-en">French</option>
+                        <option value="en" class="lang-fr">Anglais</option>
+                        <option value="en" class="lang-en">English</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="form-submit lang-fr">Envoyer ma demande</button>
+                <button type="submit" class="form-submit lang-en">Send my request</button>
+            </form>
+            
+            <p style="text-align: center; margin-top: 1.5rem; color: var(--text-light);" class="lang-fr">
+                Nous vous répondons sous 24h ouvrées avec une première analyse et, si besoin, une proposition de pack ou d’intervention ponctuelle.
+            </p>
+            <p style="text-align: center; margin-top: 1.5rem; color: var(--text-light);" class="lang-en">
+                We respond within 24 business hours with an initial analysis and, if needed, a package proposal or one-time intervention.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">HelviaDigital</div>
+                <p class="footer-slogan lang-fr">Votre partenaire digital, de A à Z.</p>
+                <p class="footer-slogan lang-en">Your digital partner, from A to Z.</p>
+                
+                <div class="footer-contact">
+                    <a href="mailto:contact@helviadigital.com">contact@helviadigital.com</a>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#home" class="lang-fr">Accueil</a>
+                    <a href="#home" class="lang-en">Home</a>
+                    <a href="#solutions" class="lang-fr">Solutions</a>
+                    <a href="#solutions" class="lang-en">Solutions</a>
+                    <a href="#pricing" class="lang-fr">Packs & Tarifs</a>
+                    <a href="#pricing" class="lang-en">Plans & Pricing</a>
+                    <a href="#process" class="lang-fr">Process</a>
+                    <a href="#process" class="lang-en">Process</a>
+                    <a href="#team" class="lang-fr">Équipe</a>
+                    <a href="#team" class="lang-en">Team</a>
+                    <a href="#contact" class="lang-fr">Contact</a>
+                    <a href="#contact" class="lang-en">Contact</a>
+                </div>
+            </div>
+            
+            <div class="footer-copyright">
+                <p class="lang-fr">© HelviaDigital – Tous droits réservés.</p>
+                <p class="lang-en">© HelviaDigital – All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language switching functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const languageSelector = document.getElementById('language');
+            
+            languageSelector.addEventListener('change', function() {
+                const selectedLang = this.value;
+                
+                // Hide all language elements
+                document.querySelectorAll('.lang-fr').forEach(el => {
+                    el.style.display = 'none';
+                });
+                document.querySelectorAll('.lang-en').forEach(el => {
+                    el.style.display = 'none';
+                });
+                
+                // Show elements for selected language
+                if (selectedLang === 'fr') {
+                    document.querySelectorAll('.lang-fr').forEach(el => {
+                        el.style.display = 'block';
+                    });
+                } else {
+                    document.querySelectorAll('.lang-en').forEach(el => {
+                        el.style.display = 'block';
+                    });
+                }
+                
+                // Update the document's language attribute
+                document.documentElement.lang = selectedLang;
+            });
+            
+            // Initialize with French as default
+            document.querySelectorAll('.lang-en').forEach(el => {
+                el.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
